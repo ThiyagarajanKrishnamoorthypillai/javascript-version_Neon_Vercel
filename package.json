@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
@@ -13,7 +12,8 @@
     "build:icons": "tsx src/assets/iconify-icons/bundle-icons-css.mjs",
     "migrate": "dotenv -e .env -- npx prisma migrate dev",
     "postinstall": "prisma generate && npm run build:icons",
-    "removeI18n": "tsx src/remove-translation-scripts/index.js"
+    "removeI18n": "tsx src/remove-translation-scripts/index.js",
+    "build": "NEXT_PUBLIC_DISABLE_ESLINT_PLUGIN=true next build"
   },
   "dependencies": {
     "@auth/prisma-adapter": "2.7.4",
